@@ -13,8 +13,6 @@ app.use(bearerToken());
 app.use('/public', express.static('public'));
 
 app.get('/', (req, res) => {
-  if (err) return res.status(500).send(err);
-
   res.status(200).send(`<h3>Welcome to MySQL-Express-API</h3>`);
 });
 
