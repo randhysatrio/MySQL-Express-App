@@ -13,6 +13,12 @@ app.use(bearerToken());
 // krn kita specify /public, maka dr FE jg hrs menggunakan localhost:8800/public/${image.path}
 app.use('/public', express.static('public'));
 
+app.get('/', (req, res) => {
+  if (err) return res.status(500).send(err);
+
+  res.status(200).send(`<h3>Welcome to MySQL-Express-API</h3>`);
+});
+
 const { productsRouter, usersRouter, uploadRouter } = require('./router');
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
